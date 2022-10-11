@@ -1,20 +1,19 @@
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
-        int flag=0;
+
+        int ans=1;
         int i=0;
         while(i<=30){
-            if(pow(2,i)==n){
-                flag=1;
-                break;
+            
+            if(ans==n){
+                return true;
             }
+            if(ans<INT_MAX/2)
+                ans=ans*2;
             i++;
         }
-        if(flag==1){
-            return true;
-        }
-        else{
-            return false;
-        }
+        
+        return false;
     }
 };
